@@ -7,9 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         function loadPage(page) {
-            fetch(page).then(response => response.text()).then(data => {
-                document.getElementById("content").innerHTML = data;
-            });
+            const content = {
+                home: `<h1 class='text-3xl font-bold'>ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</h1>
+                       <p class='mt-3 text-gray-700'>ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>` ,
+                about: `<h2 class='text-2xl font-bold'>เกี่ยวกับระบบ</h2>
+                        <p class='mt-3 text-gray-700'>ระบบใช้ AI และเซ็นเซอร์ IoT เพื่อตรวจสอบระดับความสุกของผลโกโก้</p>` ,
+                inspection: `<h2 class='text-2xl font-bold'>การตรวจสอบผลโกโก้</h2>
+                             <p class='mt-3 text-gray-700'>ข้อมูลล่าสุดเกี่ยวกับผลโกโก้ที่ตรวจสอบ</p>
+                             <table class='mt-5 w-full max-w-3xl mx-auto bg-white shadow-md rounded-md'>
+                                 <thead>
+                                     <tr class='bg-green-500 text-white'>
+                                         <th class='p-3'>รหัส</th>
+                                         <th class='p-3'>ระดับความสุก</th>
+                                         <th class='p-3'>วันที่ตรวจสอบ</th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr class='text-center border-b'>
+                                         <td class='p-3'>001</td>
+                                         <td class='p-3'><a href='#' onclick='loadPage("ripe")' class='text-blue-500 underline'>สุกพร้อมเก็บ</a></td>
+                                         <td class='p-3'>2025-03-04</td>
+                                     </tr>
+                                     <tr class='text-center border-b'>
+                                         <td class='p-3'>002</td>
+                                         <td class='p-3'><a href='#' onclick='loadPage("unripe")' class='text-blue-500 underline'>ยังไม่สุก</a></td>
+                                         <td class='p-3'>2025-03-04</td>
+                                     </tr>
+                                 </tbody>
+                             </table>` ,
+                contact: `<h2 class='text-2xl font-bold'>ติดต่อเรา</h2>
+                          <p class='mt-3 text-gray-700'>หากต้องการข้อมูลเพิ่มเติม ติดต่อผ่านอีเมล: support@cocoaai.com</p>` ,
+                ripe: `<h2 class='text-2xl font-bold text-gray-800'>สุกพร้อมเก็บ</h2>
+                       <p class='mt-3 text-gray-700'>กรอกรายละเอียดเปอร์เซ็นต์ความสุก</p>
+                       <input type='number' min='0' max='100' class='mt-3 p-2 border rounded w-full' placeholder='เปอร์เซ็นต์ความสุก'>
+                       <button class='mt-4 bg-green-600 text-white p-2 rounded w-full'>บันทึก</button>
+                       <a href='#' onclick='loadPage("inspection")' class='block mt-3 text-blue-600 underline'>กลับไป</a>` ,
+                unripe: `<h2 class='text-2xl font-bold text-gray-800'>ยังไม่สุก</h2>
+                         <p class='mt-3 text-gray-700'>กรอกรายละเอียดเปอร์เซ็นต์ความสุก</p>
+                         <input type='number' min='0' max='100' class='mt-3 p-2 border rounded w-full' placeholder='เปอร์เซ็นต์ความสุก'>
+                         <button class='mt-4 bg-green-600 text-white p-2 rounded w-full'>บันทึก</button>
+                         <a href='#' onclick='loadPage("inspection")' class='block mt-3 text-blue-600 underline'>กลับไป</a>`
+            };
+            document.getElementById("content").innerHTML = content[page];
         }
     </script>
 </head>
@@ -21,10 +60,10 @@
     
     <!-- Navigation -->
     <nav class="bg-green-500 text-white p-3 text-center">
-        <a href="#" class="px-4" onclick="loadPage('home.html')">หน้าแรก</a>
-        <a href="#" class="px-4" onclick="loadPage('about.html')">เกี่ยวกับระบบ</a>
-        <a href="#" class="px-4" onclick="loadPage('inspection.html')">การตรวจสอบ</a>
-        <a href="#" class="px-4" onclick="loadPage('contact.html')">ติดต่อเรา</a>
+        <a href="#" class="px-4" onclick="loadPage('home')">หน้าแรก</a>
+        <a href="#" class="px-4" onclick="loadPage('about')">เกี่ยวกับระบบ</a>
+        <a href="#" class="px-4" onclick="loadPage('inspection')">การตรวจสอบ</a>
+        <a href="#" class="px-4" onclick="loadPage('contact')">ติดต่อเรา</a>
     </nav>
     
     <!-- Content Section -->
