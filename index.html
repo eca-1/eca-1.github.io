@@ -1,144 +1,73 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Resume</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        display: flex;
-        max-width: 800px;
-        margin: 0 auto;
-        background-color: #fff;
-    }
-    .left, .right {
-        padding: 20px;
-    }
-    .left {
-        background-color: #e8e4e4;
-        width: 35%;
-        box-sizing: border-box;
-    }
-    .right {
-        width: 65%;
-    }
-    .header {
-        font-size: 1.5em;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-    .sub-header {
-        font-weight: bold;
-        margin-top: 10px;
-        margin-bottom: 5px;
-    }
-    .profile-image {
-        width: 100%;
-        height: auto;
-        border-radius: 8px
-        background-color: #d0d0d0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #666;
-        font-size: 1.2em;
-    }
-    .contact-info, .personal-info, .skills, .education, .quote {
-        margin-bottom: 20px;
-    }
-    .contact-info div, .personal-info div {
-        margin-bottom: 8px;
-    }
-    .skills ul, .education ul {
-        list-style: none;
-        padding: 0;
-    }
-    .skills ul li, .education ul li {
-        margin-bottom: 5px;
-    }
-    .quote {
-        background-color: #f0f0f0;
-        padding: 15px;
-        font-style: italic;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หุ่นยนต์ตรวจสอบความสุกของผลโกโก้</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-
-<div class="container">
-    <div class="left">
-        <div class="profile-image">
-    <img src="https://raw.githubusercontent.com/eca-1/eca-1.github.io/refs/heads/main/123.png" alt="Profile Image" style="width: auto; height: auto;" >
-        </div>
-        
-        <div class="contact-info">
-            <div>✉ pattananetitham545@gmail.com</div>
-            <div>เว็บไซต์ <a href="https://eca-1.github.io/">https://eca-1.github.io/</a></div>
-            <div>ที่อยู่ 165 หมู่6 ตำบลนาจักร อำเภอเมืองแพร่</div>
-        </div>
-        
-        <div class="personal-info">
-            <div class="sub-header">ข้อมูลส่วนตัว</div>
-            <div>ชื่อ: จิรภัทร พัฒนเนติธรรม</div>
-            <div>ชื่อเล่น: เจ</div>
-            <div>อายุ: 20</div>
-            <div>วันเกิด: 1 กุมภาพันธ์ 2547</div>
-            <div>ศาสนา: พุทธ</div>
-        </div>
-        
-        <div class="sub-header">ความสนใจ</div>
-        <ul>
-            <li>วิดีโอเกม</li>
-            <li>วาดภาพ</li>
-            <li>อ่านหนังสือ</li>
-            <li>นั่งสมาธิ</li>
-        </ul>
-        
-        <div class="sub-header">ภาษา</div>
-        <ul>
-            <li>อังกฤษ</li>
-            <li>ไทย</li>
-        </ul>
-    </div>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-green-700 text-white text-center p-5 text-xl font-bold">
+        หุ่นยนต์ตรวจสอบความสุกของผลโกโก้
+    </header>
     
-    <div class="right">
-        <div class="header">JIRAPT PATTANANETITHAM</div>
-        
-        <div class="profile">
-            <div class="sub-header">โปรไฟล์</div>
-            <p>มีแรงบันดาลใจอันแรงกล้าที่จะพัฒนาทักษะและเติบโตสายที่ชอบของตนเอง แล้วมั่นใจในความสามารถของตัวเองที่มักจะมีเอกลักษณ์ในการสร้างสรรค์ผลงานต่างๆให้ออกมาดี</p>
-        </div>
-        
-        <div class="skills">
-            <div class="sub-header">ความสามารถ</div>
-            <ul>
-                <li>มีความอดทน มีวินัยในการ ทำงานร่วมกับผู้อื่นได้เป็นอย่างดี</li>
-                <li>มีทักษะการสื่อสารและการทำงานเป็นทีม</li>
-                <li>สามารถทำงานภายใต้ภาวะกดดันได้ดี</li>
-            </ul>
-        </div>
-        
-        <div class="education">
-            <div class="sub-header">ประวัติการศึกษา</div>
-            <ul>
-                <li>2566 - 2567: University of Phayao - Bachelor of Science (Computer Science) (studying)</li>
-                <li>2560 - 2565: Thetsaban Ban Che Tawan School - Bachelor of Science in ICT</li>
-            </ul>
-        </div>
-        
-        <div class="quote">
-            <div class="sub-header">คติประจำใจ</div>
-            <p>ทำอะไรให้ดีให้ตัวเองมีความสุข แต่อย่าอยู่บนทุกข์ของคนอื่น</p>
-        </div>
-    </div>
-</div>
+    <!-- Navigation -->
+    <nav class="bg-green-500 text-white p-3 text-center">
+        <a href="#home" class="px-4">หน้าแรก</a>
+        <a href="#about" class="px-4">เกี่ยวกับระบบ</a>
+        <a href="#inspection" class="px-4">การตรวจสอบ</a>
+        <a href="#contact" class="px-4">ติดต่อเรา</a>
+    </nav>
+    
+    <!-- Home Section -->
+    <section id="home" class="p-10 text-center">
+        <h1 class="text-3xl font-bold">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</h1>
+        <p class="mt-3 text-gray-700">ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="p-10 bg-white">
+        <h2 class="text-2xl font-bold text-center">เกี่ยวกับระบบ</h2>
+        <p class="mt-3 text-gray-700 text-center">ระบบใช้ AI และเซ็นเซอร์ IoT เพื่อตรวจสอบระดับความสุกของผลโกโก้</p>
+    </section>
+    
+    <!-- Inspection Data Section -->
+    <section id="inspection" class="p-10 bg-gray-200 text-center">
+        <h2 class="text-2xl font-bold">การตรวจสอบผลโกโก้</h2>
+        <p class="mt-3 text-gray-700">ข้อมูลล่าสุดเกี่ยวกับผลโกโก้ที่ตรวจสอบ</p>
+        <table class="mt-5 w-full max-w-3xl mx-auto bg-white shadow-md rounded-md">
+            <thead>
+                <tr class="bg-green-500 text-white">
+                    <th class="p-3">รหัส</th>
+                    <th class="p-3">ระดับความสุก</th>
+                    <th class="p-3">วันที่ตรวจสอบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center border-b">
+                    <td class="p-3">001</td>
+                    <td class="p-3">สุกพร้อมเก็บ</td>
+                    <td class="p-3">2025-03-04</td>
+                </tr>
+                <tr class="text-center border-b">
+                    <td class="p-3">002</td>
+                    <td class="p-3">ยังไม่สุก</td>
+                    <td class="p-3">2025-03-04</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="p-10 text-center bg-white">
+        <h2 class="text-2xl font-bold">ติดต่อเรา</h2>
+        <p class="mt-3 text-gray-700">หากต้องการข้อมูลเพิ่มเติม ติดต่อผ่านอีเมล: support@cocoaai.com</p>
+    </section>
 
+    <!-- Footer -->
+    <footer class="bg-green-700 text-white text-center p-4 mt-5">
+        &copy; 2025 ระบบหุ่นยนต์ตรวจสอบความสุกของผลโกโก้
+    </footer>
 </body>
 </html>
