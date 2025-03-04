@@ -6,9 +6,9 @@
     <title>หุ่นยนต์ตรวจสอบความสุกของผลโกโก้</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function navigateTo(page, color) {
-            document.body.className = color;
-            document.getElementById('content').innerHTML = document.getElementById(page).innerHTML;
+        function navigate(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+            document.getElementById(page).classList.remove('hidden');
         }
     </script>
 </head>
@@ -20,30 +20,29 @@
     
     <!-- Navigation -->
     <nav class="bg-green-500 text-white p-3 text-center">
-        <a href="#" onclick="navigateTo('homeContent', 'bg-gray-100')" class="px-4">หน้าแรก</a>
-        <a href="#" onclick="navigateTo('aboutContent', 'bg-white')" class="px-4">เกี่ยวกับระบบ</a>
-        <a href="#" onclick="navigateTo('inspectionContent', 'bg-gray-200')" class="px-4">การตรวจสอบ</a>
-        <a href="#" onclick="navigateTo('robotStatusContent', 'bg-white')" class="px-4">สถานะหุ่นยนต์</a>
-        <a href="#" onclick="navigateTo('contactContent', 'bg-white')" class="px-4">ติดต่อเรา</a>
+        <a href="#" onclick="navigate('home')" class="px-4">หน้าแรก</a>
+        <a href="#" onclick="navigate('about')" class="px-4">เกี่ยวกับระบบ</a>
+        <a href="#" onclick="navigate('inspection')" class="px-4">การตรวจสอบ</a>
+        <a href="#" onclick="navigate('status')" class="px-4">สถานะหุ่นยนต์</a>
+        <a href="#" onclick="navigate('contact')" class="px-4">ติดต่อเรา</a>
     </nav>
     
-    <!-- Dynamic Content -->
-    <div id="content" class="p-10 text-center">
-        <div id="homeContent">
-            <h1 class="text-3xl font-bold text-green-700">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</h1>
-            <p class="mt-3 text-gray-700">ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>
-            <img src="https://samitivej-prod-new-website.s3.ap-southeast-1.amazonaws.com/public/uploads/contents/4991b37229b8970a5e7c2fb7c10b13e9.jpg" alt="ผลโกโก้" class="mt-5 mx-auto w-1/2 rounded-md shadow-md">
-        </div>
-    </div>
+    <!-- Home Section (Merged with Welcome Section) -->
+    <section id="home" class="page p-10 text-center">
+        <h1 class="text-3xl font-bold">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</h1>
+        <p class="mt-3 text-gray-700">ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>
+        <img src="cocoa.jpg" alt="รูปโกโก้" class="mx-auto mt-5 w-64">
+    </section>
     
-    <!-- Hidden Sections -->
-    <div id="aboutContent" class="hidden">
-        <h2 class="text-2xl font-bold text-green-700">เกี่ยวกับระบบ</h2>
-        <p class="mt-3 text-gray-700">ระบบใช้ AI และเซ็นเซอร์ IoT เพื่อตรวจสอบระดับความสุกของผลโกโก้</p>
-    </div>
+    <!-- About Section -->
+    <section id="about" class="page hidden p-10 bg-white">
+        <h2 class="text-2xl font-bold text-center">เกี่ยวกับระบบ</h2>
+        <p class="mt-3 text-gray-700 text-center">ระบบใช้ AI และเซ็นเซอร์ IoT เพื่อตรวจสอบระดับความสุกของผลโกโก้</p>
+    </section>
     
-    <div id="inspectionContent" class="hidden">
-        <h2 class="text-2xl font-bold text-green-700">การตรวจสอบผลโกโก้</h2>
+    <!-- Inspection Data Section -->
+    <section id="inspection" class="page hidden p-10 bg-gray-200 text-center">
+        <h2 class="text-2xl font-bold">การตรวจสอบผลโกโก้</h2>
         <p class="mt-3 text-gray-700">ข้อมูลล่าสุดเกี่ยวกับผลโกโก้ที่ตรวจสอบ</p>
         <table class="mt-5 w-full max-w-3xl mx-auto bg-white shadow-md rounded-md">
             <thead>
@@ -54,49 +53,47 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('ripeContent', 'bg-gray-100')">
+                <tr class="text-center border-b">
                     <td class="p-3">001</td>
-                    <td class="p-3 text-yellow-500">สุกพร้อมเก็บ</td>
+                    <td class="p-3 text-yellow-600 cursor-pointer" onclick="navigate('ripe')">สุกพร้อมเก็บ</td>
                     <td class="p-3">2025-03-04</td>
                 </tr>
-                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('unripeContent', 'bg-red-100')">
+                <tr class="text-center border-b">
                     <td class="p-3">002</td>
-                    <td class="p-3 text-red-500">ยังไม่สุก</td>
+                    <td class="p-3 text-red-600 cursor-pointer" onclick="navigate('unripe')">ยังไม่สุก</td>
                     <td class="p-3">2025-03-04</td>
                 </tr>
             </tbody>
         </table>
-    </div>
+    </section>
     
-    <div id="ripeContent" class="hidden">
-        <h2 class="text-2xl font-bold text-green-700">รายละเอียดความสุกของผลโกโก้</h2>
-        <p class="mt-3 text-gray-700">AI ประเมินว่าผลโกโก้นี้สุกประมาณ:</p>
-        <h3 class="text-xl font-bold text-yellow-600">85%</h3>
-        <img src="ripe_cocoa.jpg" alt="ผลโกโก้สุก" class="mt-5 mx-auto w-1/2 rounded-md shadow-md">
-    </div>
+    <!-- Ripe Details Section -->
+    <section id="ripe" class="page hidden p-10 bg-white text-center">
+        <h2 class="text-2xl font-bold">รายละเอียดผลโกโก้ที่สุก</h2>
+        <img src="ripe_cocoa.jpg" alt="โกโก้สุก" class="mx-auto mt-5 w-64">
+        <p class="mt-3 text-gray-700">ระดับความสุก: 85%</p>
+    </section>
     
-    <div id="unripeContent" class="hidden">
-        <h2 class="text-2xl font-bold text-green-700">รายละเอียดผลโกโก้ที่ยังไม่สุก</h2>
-        <p class="mt-3 text-gray-700">AI ประเมินว่าผลโกโก้นี้สุกประมาณ:</p>
-        <h3 class="text-xl font-bold text-red-600">40%</h3>
-        <img src="unripe_cocoa.jpg" alt="ผลโกโก้ยังไม่สุก" class="mt-5 mx-auto w-1/2 rounded-md shadow-md">
-    </div>
+    <!-- Unripe Details Section -->
+    <section id="unripe" class="page hidden p-10 bg-white text-center">
+        <h2 class="text-2xl font-bold">รายละเอียดผลโกโก้ที่ยังไม่สุก</h2>
+        <img src="unripe_cocoa.jpg" alt="โกโก้ยังไม่สุก" class="mx-auto mt-5 w-64">
+        <p class="mt-3 text-gray-700">ระดับความสุก: 40%</p>
+    </section>
     
-    <div id="robotStatusContent" class="hidden">
-        <h2 class="text-2xl font-bold text-green-700">สถานะหุ่นยนต์</h2>
-        <p class="mt-3 text-gray-700">ติดตามสถานะของหุ่นยนต์แบบเรียลไทม์</p>
-        <ul class="mt-3 text-gray-700">
-            <li>🔋 แบตเตอรี่หมดใน: <span class="font-bold">2 ชั่วโมง</span></li>
-            <li>⚙️ สถานะเครื่องจักร: <span class="font-bold">ปกติ</span></li>
-            <li>✅ พร้อมทำงาน: <span class="font-bold text-green-500">พร้อม</span></li>
-        </ul>
-    </div>
+    <!-- Robot Status Section -->
+    <section id="status" class="page hidden p-10 bg-white text-center">
+        <h2 class="text-2xl font-bold">สถานะหุ่นยนต์</h2>
+        <p class="mt-3 text-gray-700">แบตเตอรี่: 80%</p>
+        <p class="mt-3 text-gray-700">สถานะระบบ: พร้อมทำงาน</p>
+    </section>
     
-    <div id="contactContent" class="hidden">
-        <h2 class="text-2xl font-bold text-green-700">ติดต่อเรา</h2>
+    <!-- Contact Section -->
+    <section id="contact" class="page hidden p-10 text-center bg-white">
+        <h2 class="text-2xl font-bold">ติดต่อเรา</h2>
         <p class="mt-3 text-gray-700">หากต้องการข้อมูลเพิ่มเติม ติดต่อผ่านอีเมล: support@cocoaai.com</p>
-    </div>
-    
+    </section>
+
     <!-- Footer -->
     <footer class="bg-green-700 text-white text-center p-4 mt-5">
         &copy; 2025 ระบบหุ่นยนต์ตรวจสอบความสุกของผลโกโก้
