@@ -23,6 +23,7 @@
         <a href="#" onclick="navigateTo('homeContent', 'bg-gray-100')" class="px-4">หน้าแรก</a>
         <a href="#" onclick="navigateTo('aboutContent', 'bg-white')" class="px-4">เกี่ยวกับระบบ</a>
         <a href="#" onclick="navigateTo('inspectionContent', 'bg-gray-200')" class="px-4">การตรวจสอบ</a>
+        <a href="#" onclick="navigateTo('robotStatusContent', 'bg-white')" class="px-4">สถานะหุ่นยนต์</a>
         <a href="#" onclick="navigateTo('contactContent', 'bg-white')" class="px-4">ติดต่อเรา</a>
     </nav>
     
@@ -52,9 +53,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('ripeContent', 'bg-yellow-300')">
+                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('ripeContent', 'bg-gray-100')">
                     <td class="p-3">001</td>
-                    <td class="p-3">สุกพร้อมเก็บ</td>
+                    <td class="p-3 text-yellow-500">สุกพร้อมเก็บ</td>
                     <td class="p-3">2025-03-04</td>
                 </tr>
                 <tr class="text-center border-b cursor-pointer" onclick="navigateTo('unripeContent', 'bg-red-300')">
@@ -76,6 +77,16 @@
         <h2 class="text-2xl font-bold">รายละเอียดผลโกโก้ที่ยังไม่สุก</h2>
         <p class="mt-3 text-gray-700">กรุณากรอกเปอร์เซ็นต์ความสุกของผลโกโก้</p>
         <input type="number" placeholder="% ความสุก" class="mt-3 p-2 border rounded-md">
+    </div>
+    
+    <div id="robotStatusContent" class="hidden">
+        <h2 class="text-2xl font-bold">สถานะหุ่นยนต์</h2>
+        <p class="mt-3 text-gray-700">ติดตามสถานะของหุ่นยนต์แบบเรียลไทม์</p>
+        <ul class="mt-3 text-gray-700">
+            <li>🔋 แบตเตอรี่หมดใน: <span class="font-bold">2 ชั่วโมง</span></li>
+            <li>⚙️ สถานะเครื่องจักร: <span class="font-bold">ปกติ</span></li>
+            <li>✅ พร้อมทำงาน: <span class="font-bold text-green-500">พร้อม</span></li>
+        </ul>
     </div>
     
     <div id="contactContent" class="hidden">
