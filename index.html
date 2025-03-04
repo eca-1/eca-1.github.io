@@ -6,13 +6,13 @@
     <title>หุ่นยนต์ตรวจสอบความสุกของผลโกโก้</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        function navigateTo(page, color) {
-            document.body.className = color;
+        function navigateTo(page) {
+            document.body.className = 'bg-gray-100';
             if (page === 'homeContent') {
                 document.getElementById('content').innerHTML = `
                     <div id="homeContent">
                         <h1 class="text-3xl font-bold text-green-700">
-                            <a href="#" onclick="navigateTo('homeContent', 'bg-gray-100')">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</a>
+                            <a href="#" onclick="navigateTo('homeContent')">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</a>
                         </h1>
                         <p class="mt-3 text-gray-700">ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>
                         <img src="https://samitivej-prod-new-website.s3.ap-southeast-1.amazonaws.com/public/uploads/contents/4991b37229b8970a5e7c2fb7c10b13e9.jpg" alt="ผลโกโก้" class="mt-5 mx-auto w-1/2 rounded-md shadow-md">
@@ -32,18 +32,18 @@
     
     <!-- Navigation -->
     <nav class="bg-green-500 text-white p-3 text-center">
-        <a href="#" onclick="navigateTo('homeContent', 'bg-gray-100')" class="px-4">หน้าแรก</a>
-        <a href="#" onclick="navigateTo('aboutContent', 'bg-white')" class="px-4">เกี่ยวกับระบบ</a>
-        <a href="#" onclick="navigateTo('inspectionContent', 'bg-gray-200')" class="px-4">การตรวจสอบ</a>
-        <a href="#" onclick="navigateTo('robotStatusContent', 'bg-white')" class="px-4">สถานะหุ่นยนต์</a>
-        <a href="#" onclick="navigateTo('contactContent', 'bg-white')" class="px-4">ติดต่อเรา</a>
+        <a href="#" onclick="navigateTo('homeContent')" class="px-4">หน้าแรก</a>
+        <a href="#" onclick="navigateTo('aboutContent')" class="px-4">เกี่ยวกับระบบ</a>
+        <a href="#" onclick="navigateTo('inspectionContent')" class="px-4">การตรวจสอบ</a>
+        <a href="#" onclick="navigateTo('robotStatusContent')" class="px-4">สถานะหุ่นยนต์</a>
+        <a href="#" onclick="navigateTo('contactContent')" class="px-4">ติดต่อเรา</a>
     </nav>
     
     <!-- Dynamic Content -->
     <div id="content" class="p-10 text-center">
         <div id="homeContent">
             <h1 class="text-3xl font-bold text-green-700">
-                <a href="#" onclick="navigateTo('homeContent', 'bg-gray-100')">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</a>
+                <a href="#" onclick="navigateTo('homeContent')">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</a>
             </h1>
             <p class="mt-3 text-gray-700">ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>
             <img src="https://samitivej-prod-new-website.s3.ap-southeast-1.amazonaws.com/public/uploads/contents/4991b37229b8970a5e7c2fb7c10b13e9.jpg" alt="ผลโกโก้" class="mt-5 mx-auto w-1/2 rounded-md shadow-md">
@@ -68,12 +68,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('ripeContent', 'bg-gray-100')">
+                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('ripeContent')">
                     <td class="p-3">001</td>
                     <td class="p-3 text-yellow-500">สุกพร้อมเก็บ</td>
                     <td class="p-3">2025-03-04</td>
                 </tr>
-                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('unripeContent', 'bg-gray-100')">
+                <tr class="text-center border-b cursor-pointer" onclick="navigateTo('unripeContent')">
                     <td class="p-3">002</td>
                     <td class="p-3 text-red-500">ยังไม่สุก</td>
                     <td class="p-3">2025-03-04</td>
