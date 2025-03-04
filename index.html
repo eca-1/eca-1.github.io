@@ -5,9 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>หุ่นยนต์ตรวจสอบความสุกของผลโกโก้</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .active-nav {
+            background-color: #2d3748; /* สีเทาเข้ม */
+        }
+    </style>
     <script>
         function navigateTo(page) {
             document.body.className = 'bg-gray-100';
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active-nav');
+            });
+            document.querySelector(`nav a[href="#${page}"]`).classList.add('active-nav');
             if (page === 'homeContent') {
                 document.getElementById('content').innerHTML = `
                     <div id="homeContent">
@@ -32,11 +41,11 @@
     
     <!-- Navigation -->
     <nav class="bg-green-500 text-white p-3 text-center">
-        <a href="#" onclick="navigateTo('homeContent')" class="px-4">หน้าแรก</a>
-        <a href="#" onclick="navigateTo('aboutContent')" class="px-4">เกี่ยวกับระบบ</a>
-        <a href="#" onclick="navigateTo('inspectionContent')" class="px-4">การตรวจสอบ</a>
-        <a href="#" onclick="navigateTo('robotStatusContent')" class="px-4">สถานะหุ่นยนต์</a>
-        <a href="#" onclick="navigateTo('contactContent')" class="px-4">ติดต่อเรา</a>
+        <a href="#homeContent" onclick="navigateTo('homeContent')" class="px-4">หน้าแรก</a>
+        <a href="#aboutContent" onclick="navigateTo('aboutContent')" class="px-4">เกี่ยวกับระบบ</a>
+        <a href="#inspectionContent" onclick="navigateTo('inspectionContent')" class="px-4">การตรวจสอบ</a>
+        <a href="#robotStatusContent" onclick="navigateTo('robotStatusContent')" class="px-4">สถานะหุ่นยนต์</a>
+        <a href="#contactContent" onclick="navigateTo('contactContent')" class="px-4">ติดต่อเรา</a>
     </nav>
     
     <!-- Dynamic Content -->
@@ -56,6 +65,20 @@
         <p class="mt-3 text-gray-700">ระบบใช้ AI และเซ็นเซอร์ IoT เพื่อตรวจสอบระดับความสุกของผลโกโก้</p>
         <p class="mt-3 text-gray-700">หุ่นยนต์ของเราถูกออกแบบมาเพื่อช่วยให้เกษตรกรสามารถตรวจสอบความสุกของผลโกโก้ได้อย่างแม่นยำ ลดความผิดพลาดในการเก็บเกี่ยว และเพิ่มประสิทธิภาพในการจัดการฟาร์ม</p>
         <p class="mt-3 text-gray-700">ระบบสามารถแยกแยะระดับความสุกของผลโกโก้ผ่านการประมวลผลภาพและการวิเคราะห์ข้อมูลจากเซ็นเซอร์ ซึ่งช่วยให้สามารถเก็บเกี่ยวผลผลิตในช่วงเวลาที่เหมาะสมที่สุด</p>
+        <h3 class="text-xl font-bold text-green-700 mt-5">คุณสมบัติของระบบ</h3>
+        <ul class="list-disc list-inside mt-3 text-gray-700">
+            <li>การประมวลผลภาพด้วย AI เพื่อประเมินระดับความสุกของผลโกโก้</li>
+            <li>การใช้เซ็นเซอร์ IoT เพื่อตรวจสอบข้อมูลสภาพแวดล้อม</li>
+            <li>การแจ้งเตือนผ่านแอปพลิเคชันเมื่อผลโกโก้พร้อมเก็บเกี่ยว</li>
+            <li>การบันทึกข้อมูลและวิเคราะห์ผลการตรวจสอบเพื่อปรับปรุงการเก็บเกี่ยวในอนาคต</li>
+        </ul>
+        <h3 class="text-xl font-bold text-green-700 mt-5">ประโยชน์ที่เกษตรกรจะได้รับ</h3>
+        <ul class="list-disc list-inside mt-3 text-gray-700">
+            <li>ลดความผิดพลาดในการเก็บเกี่ยวผลโกโก้</li>
+            <li>เพิ่มประสิทธิภาพในการจัดการฟาร์ม</li>
+            <li>เพิ่มผลผลิตและคุณภาพของผลโกโก้</li>
+            <li>ลดต้นทุนการผลิตและเพิ่มรายได้</li>
+        </ul>
     </div>
     
     <div id="inspectionContent" class="hidden">
@@ -119,4 +142,3 @@
     </footer>
 </body>
 </html>
-    
