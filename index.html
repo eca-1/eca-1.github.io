@@ -9,6 +9,20 @@
         .active-nav {
             background-color: #2d3748; /* สีเทาเข้ม */
         }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 10; /* Ensure footer stays on top of content */
+        }
+        body{
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        #content{
+          flex-grow: 1;
+        }
     </style>
     <script>
         function navigateTo(page) {
@@ -32,10 +46,12 @@
     </script>
 </head>
 <body class="bg-gray-100">
+    <!-- Header -->
     <header class="bg-green-700 text-white text-center p-5 text-xl font-bold">
         หุ่นยนต์ตรวจสอบความสุกของผลโกโก้
     </header>
     
+    <!-- Navigation -->
     <nav class="bg-green-500 text-white p-3 text-center">
         <a href="#homeContent" onclick="navigateTo('homeContent')" class="px-4">หน้าแรก</a>
         <a href="#aboutContent" onclick="navigateTo('aboutContent')" class="px-4">เกี่ยวกับระบบ</a>
@@ -44,14 +60,18 @@
         <a href="#contactContent" onclick="navigateTo('contactContent')" class="px-4">ติดต่อเรา</a>
     </nav>
     
+    <!-- Dynamic Content -->
     <div id="content" class="p-10 text-center">
         <div id="homeContent">
-            <h1 class="text-3xl font-bold text-green-700">ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้</h1>
+            <h1 class="text-3xl font-bold text-green-700">
+                ยินดีต้อนรับสู่ระบบตรวจสอบความสุกของผลโกโก้
+            </h1>
             <p class="mt-3 text-gray-700">ระบบของเราช่วยให้เกษตรกรสามารถเก็บเกี่ยวผลโกโก้ได้อย่างมีประสิทธิภาพ</p>
             <img src="https://samitivej-prod-new-website.s3.ap-southeast-1.amazonaws.com/public/uploads/contents/4991b37229b8970a5e7c2fb7c10b13e9.jpg" alt="ผลโกโก้" class="mt-5 mx-auto w-1/2 rounded-md shadow-md">
         </div>
     </div>
     
+    <!-- Hidden Sections -->
     <div id="aboutContent" class="hidden">
         <h2 class="text-2xl font-bold text-green-700">เกี่ยวกับระบบ</h2>
         <p class="mt-3 text-gray-700">ระบบใช้ AI และเซ็นเซอร์ IoT เพื่อตรวจสอบระดับความสุกของผลโกโก้</p>
@@ -131,5 +151,8 @@
     <footer class="bg-green-700 text-white text-center p-4 mt-5">
         &copy; 2025 ระบบหุ่นยนต์ตรวจสอบความสุกของผลโกโก้
     </footer>
+    <script>
+        navigateTo('homeContent'); // Call navigateTo('homeContent') on page load
+    </script>
 </body>
 </html>
